@@ -1,0 +1,8 @@
+/* start custom scss snippet */
+// 隐藏未被渲染的原始 LaTeX 文本
+.post-content {
+  [class^="tex-"] {
+    display: none;
+  }
+}
+/* end custom scss snippet */

@@ -6195,6 +6195,10 @@ html,
 }
 
 /* start custom scss snippet */
+.post-content [class^=tex-] {
+  display: none;
+}
+
 /* end custom scss snippet */
 
 /*# sourceMappingURL=main.css.map */

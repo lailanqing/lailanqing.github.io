@@ -21,15 +21,20 @@ highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "t
 url     : "https://lailanqing.github.io/" # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
 title   : "Lai'Lanqing"
-description: > # this means to ignore newlines until "Language & timezone"
+description: > 
+  hi, That is lailanqing. Share valuable insights with you.
+# this means to ignore newlines until "Language & timezone"
 #"Share valuable insights."
 
+footer:
+  copyright: "© Lai'Lanqing, 2025, Powered by Jekyll & TeXt Theme." 
 
 ## => Language and Timezone
 ##############################
 lang: # the language of your site, default as "en"
 timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
+site_start_year: 2025
 
 ## => Author and Social
 ##############################
@@ -180,6 +185,11 @@ analytics:
 ## => Build
 ##############################
 markdown    : kramdown
+kramdown:
+  math_engine: katex
+  math_engine_opts: { preview: false }  # 禁用预渲染
+  syntax_highlighter: rouge
+  input: GFM
 highlighter : rouge
 permalink   : date
 
