@@ -1,0 +1,20 @@
+# .github/workflows/deploy.yml
+name: Deploy with KaTeX
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: gem install jekyll-katex
+      - run: |
+          echo "gem 'jekyll-katex'" >> Gemfile
+          bundle install
+          bundle exec jekyll build
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
